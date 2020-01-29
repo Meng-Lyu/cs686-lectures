@@ -26,14 +26,14 @@ public class Main {
     runSamplePipeline1();
 
     // runSamplePipeline2();
-
   }
 
   static void runSamplePipeline1() {
 
     // 1. Create a pipeline object and set things up.
     Pipeline p = Pipeline.create();
-    p.getOptions().setRunner(DirectRunner.class); // This tells Beam to use local machine (not Google Dataflow Runner).
+    // This tells Beam to use local machine (not Google Dataflow Runner).
+    p.getOptions().setRunner(DirectRunner.class);
 
     // 2. Suppose we're reading CSV (text) data from some data source.
     // For the sake of simplicity, we're creating dummy data from an in-memory Java collection.
@@ -51,26 +51,31 @@ public class Main {
     ));
 
     // 3. First, we filter out corrupted data.
-    PCollection<String> filteredData = inputData.apply(Filter.by(new ProcessFunction<String, Boolean>() {
-      @Override
-      public Boolean apply(String input) {
-        if (StringUtils.isBlank(input)) {
-          return false;
-        }
-        // NOTE: This is not the right way to do this, but for simplicity, let's just do this.
-        return input.split(",").length == 2;
-      }
-    }));
+    PCollection<String> filteredData = inputData.apply( //
+        Filter.by(new ProcessFunction<String, Boolean>() {
+          @Override
+          public Boolean apply(String input) {
+            if (StringUtils.isBlank(input)) {
+              return false;
+            }
+            // NOTE: This is not the right way to do this, but for simplicity,
+            // let's just do this.
+            return input.split(",").length == 2;
+          }
+        }));
 
     // 4. Next, we transform raw data (CSV) to structured data.
-    PCollection<StructuredData> userApps = filteredData.apply(ParDo.of(new DoFn<String, StructuredData>() {
-      @ProcessElement
-      public void process(@Element String line, OutputReceiver<StructuredData> out) {
-        System.out.format("Processing: '%s'\n", line);
-        // NOTE: This is horrible code, and you shouldn't produce code like this.
-        out.output(StructuredData.newBuilder().setDeviceId(line.split(",")[0]).setAppId(line.split(",")[1]).build());
-      }
-    }));
+    PCollection<StructuredData> userApps = filteredData.apply( //
+        ParDo.of(new DoFn<String, StructuredData>() {
+          @ProcessElement
+          public void process(@Element String line, OutputReceiver<StructuredData> out) {
+            System.out.format("Processing: '%s'\n", line);
+            // NOTE: This is horrible code, and you shouldn't produce code like this.
+            out.output(StructuredData.newBuilder() //
+                .setDeviceId(line.split(",")[0]) //
+                .setAppId(line.split(",")[1]).build());
+          }
+        }));
 
     // 5. How to count the number of (unique) users per app?
     // We need KV<T,S> so we can "aggregate" at "T" (key) level.
@@ -98,6 +103,8 @@ public class Main {
     System.out.println("\nta-da! done!");
   }
 
+  // NOTE: We'll revisit this next week when we learn about "sideInput()".
+  // Yet the following code demonstrates a few APIs/methods we learned in Lecture 04, so you should play with it!
   static void runSamplePipeline2() {
 
     // 1. Create a pipeline object and set things up.
