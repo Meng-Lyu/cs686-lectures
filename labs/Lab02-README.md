@@ -1,5 +1,6 @@
 ## Version History
  - v01: The original version that was released Tuesday night.
+ - v02: Revised on Jan 29 (Wed) around 9:50 AM, after someone reported errors/typos in the instructions (see commit history to see what was changed).
 
 # CS686 Lab 02
 
@@ -44,7 +45,7 @@ Using the theme of `Mobile Ads`, this lab includes proto files that define inter
     * In Part 0 below, you will find that this proto file leads to a large-size Java file, which may cause a problem for your IDE. Hence, you'll fix that in this lab (so that you won't have to do that for future labs/projects).
  
  2. `proto/common.proto`: 
-    * This defines `OsType` and `DeviceId` (I changed `AdId` from Lab 01 to `DeviceId` as I think it's more natural). `DeviceId` is assumed to uniquely identify a mobile device.
+    * This defines `OsType` and `DeviceId` (I changed `UserId` from Lab 01 to `DeviceId` as I think it's more natural). `DeviceId` is assumed to uniquely identify a mobile device.
     * Don't worry about `uuid` and `webid` for now -- just consider those being some strings representing a device's (unique) id.
  
  3. `proto/bid.proto`: 
@@ -86,12 +87,12 @@ idea.max.intellisense.filesize=999999
  - Pay attention to the error messages you see when gradle test fails (those error messages would give you some type-mistmatch errors).
  - If your code does not build (i.e., `gradle test` fails due to compilation errors, not unit test failures), then your commit will not even be graded (because unit tests can't be run), so do not push your code to remote repo unless it compiles/builds.
 
-### Part 2 - Fix BaseOptions.java
- - See the comments with **`TODO`** in `BaseOptions` interface.
+### Part 2 - Fix MyOptions.java
+ - See the comments with **`TODO`** in `MyOptions` interface.
  - There are four properties: `course`, `directRunner`, `job`, and `debug`.
  - `course` is missing a setter, so you should add it (see the other three setters for reference).
  - Each of the other properties needs one line of change (namely, you need to add some Java annotation to replace the line with `// TODO: ...`).
- - If you pay attention to the unit tests (`__TestBaseOptions.java`), you will be able to figure out what needs to be done.
+ - If you pay attention to the unit tests (`__TestBaseOptions.java`; I forgot to change the name of this file/class to `__TestMyOptions.java`), you will be able to figure out what needs to be done.
  - You are welcome to search the Internet as much as you want to, but it's not really necessary.
  - If you've never used the Annotations before, this is a good time to study the basics (we will not go into the details, but we will need to use some annotations as Beam SDK relies on them).
 
