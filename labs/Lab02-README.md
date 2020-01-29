@@ -1,6 +1,7 @@
 ## Version History
  - v01: The original version that was released Tuesday night.
  - v02: Revised on Jan 29 (Wed) around 9:50 AM, after someone reported errors/typos in the instructions (see commit history to see what was changed).
+ - v03: Revised right after v02 aroudn 9:52 AM. For the `shortAnswer()` method, you should copy-and-paste **the seventh line** not the sixth; note that there is only one line that is exactly 43 characters long anyway, hopefully you can get it right. Sorry about that!
 
 # CS686 Lab 02
 
@@ -104,7 +105,7 @@ idea.max.intellisense.filesize=999999
 ### Final Remarks
  - See the intelliJ issue (due to the default limit on Java file size) mentioned in Part 0.
  - You can work on Parts 1-3 in any order you'd like, but it's probably the best if you work on Part 1 first.
- - Lab 02 has one short-answer question.
+ - Lab 02 has one short-answer question (see the clarification above, for v03).
  - I believe you can complete this lab pretty easily (but I have been proven wrong in the past, so...), with the help of the sample code from Lecture 02 and the proto3 reference (specifically, `Language Guide (proto3)`). 
  - If you find it too callenging, please share on Piazza (i) where you are stuck and (ii) what you have tried; you can be anonymous.
 
