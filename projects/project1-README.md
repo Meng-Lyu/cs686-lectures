@@ -4,6 +4,7 @@
 ### Errata / Corrections
  - (v1) Project 1 is live! 8:12pm-ish. Link is available on Canvas.
  - (v2) There are **20** "sample tests" under java/judge, not **27** (I counted it wrong again...). "shareable" and "hidden" tests are yet to be determined.
+ - (v3) Four input files are added to this path to help you test your pipelines: https://github.com/cs-rocks/cs686-lectures/tree/master/projects/project1-data This will be useful when you are almost done with all tasks (so you can run your pipeline end-to-end).
 
 ## Do's and Don'ts
 
