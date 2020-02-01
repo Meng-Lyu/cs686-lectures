@@ -2,7 +2,7 @@
 
 
 ### Errata / Corrections
- - (v1) Project 1 to go live soon...
+ - (v1) Project 1 is live! 8:12pm-ish. Link is available on Canvas.
 
 ## Do's and Don'ts
 
