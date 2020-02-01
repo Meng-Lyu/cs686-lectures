@@ -3,6 +3,7 @@
 
 ### Errata / Corrections
  - (v1) Project 1 is live! 8:12pm-ish. Link is available on Canvas.
+ - (v2) There are **20** "sample tests" under java/judge, not **27** (I counted it wrong again...). "shareable" and "hidden" tests are yet to be determined.
 
 ## Do's and Don'ts
 
