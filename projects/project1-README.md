@@ -7,6 +7,14 @@
  - (v3) Four input files are added to this path to help you test your pipelines: https://github.com/cs-rocks/cs686-lectures/tree/master/projects/project1-data This will be useful when you are almost done with all tasks (so you can run your pipeline end-to-end).
  - (v4) As of Feb 1 at 5pm, the grading system began to grade project 1 submissions. ([Click for  status](https://www.cs.usfca.edu/~hlee84/cs686/proj1-status.html)) 
  - Note: There are 20 basic tests, 14 shareable tests, and 10 hidden tests. (Your score := 60% shareable + 40% hidden.)
+ - (v5) Clarification regarding how you should convert `BidLog` proto to `DeviceProfile` proto: 
+   - You should utilize `BidLog.BidRequest.Device.os()` and `BidLog.BidRequest.Device.ifa()` (uuid equivalent) for `DeviceId`.
+   (I know that `BidLog` proto also has `DeviceId` field, which I should have removed it before releasing this assignment. Consider that field non-existent, for this assignment.)
+   - You should utilize `BidLog.recevAt` (timestamp in milliseconds at which the request was received by our servers) when you set `firstAt/lastAt` of `DeviceProfile` and `AppActivity`.
+   - You should utilize `BidLog.BidRequest.App.bundle` for `AppActivity`'s bundle (this is a unique ID for each app).
+   - You should utilize `BidLog.exchange` for updating the count map in `AppActivity` (key being the enum value of `Exchange` proto).
+   - Lastly, for `countToday` and `countLifetime` in `AppActivity`, consider each `BidLog` being one in-app activity event. Therefore, when we initially convert one `BidLog` to one `DeviceProfile`, then each counter (`countToday`, `countLifetime`, and `countPerExchange`) all must have a value of 1 each (as there is one event being considered). Later, when we aggregate `DeviceProfile` protos for each user, we would naturally sum up the counters to get an accurate value. 
+   - If you need further clarification, please ask on Piazza.
 
 ## Do's and Don'ts
 
