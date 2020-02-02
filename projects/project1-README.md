@@ -5,6 +5,8 @@
  - (v1) Project 1 is live! 8:12pm-ish. Link is available on Canvas.
  - (v2) There are **20** "sample tests" under java/judge, not **27** (I counted it wrong again...). "shareable" and "hidden" tests are yet to be determined.
  - (v3) Four input files are added to this path to help you test your pipelines: https://github.com/cs-rocks/cs686-lectures/tree/master/projects/project1-data This will be useful when you are almost done with all tasks (so you can run your pipeline end-to-end).
+ - (v4) As of Feb 1 at 5pm, the grading system began to grade project 1 submissions. ([Click for  status](https://www.cs.usfca.edu/~hlee84/cs686/proj1-status.html)) 
+ - Note: There are 20 basic tests, 14 shareable tests, and 10 hidden tests. (Your score := 60% shareable + 40% hidden.)
 
 ## Do's and Don'ts
 
@@ -111,7 +113,7 @@ You do NOT have to work on these tasks in this order, so feel free to work on pa
  - Also, if it ever goes down, it'll likely go down when there are a lot of simultaneous submissions, and therefore I suggest you begin working on your labs as soon as they are released.
 
 ## Scoring
- - Number of sample/shareable/hidden tests: 27 / TBA / TBA (see https://github.com/cs-rocks/cs686-lectures/blob/master/projects/project1-README.md)
+ - Number of sample/shareable/hidden tests: 27 / 14 / 10 (see https://github.com/cs-rocks/cs686-lectures/blob/master/projects/project1-README.md)
  - If your submission fails any one of the sample tests: Your score will be 0 (This applies to all labs/projects).
  - Otherwise, your overall score will be **60% shareable tests + 40% hidden tests** (this weight may vary from project to project).
  - Your score for this project will be the maximum score you obtain before the deadline (This applies to all labs/projects).
