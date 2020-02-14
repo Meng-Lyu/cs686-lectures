@@ -69,7 +69,7 @@ Note: Likely in Lecture 05 or Lecture 06, we will briefly go over these proto me
  - Add the following two lines and save:
 ```
 ## custom IntelliJ IDEA properties
-idea.max.intellisense.filesize=999999
+idea.max.intellisense.filesize=9999999
 ```
  - The reason this is needed is because one of the proto files (namely, `proto/vendor/openrtb.proto`) will lead to a java file that is as large as 3.5 MB.
  ```
