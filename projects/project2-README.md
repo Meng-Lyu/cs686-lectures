@@ -33,6 +33,7 @@
 ### Goals
 
 **Intro**
+
 As mentioned in Lecture 11 (Feb 14), "Mobile Ads and Real-time Bidding" is the theme of our course projects.
 In this project, specifically, you will work on three major PTransforms.
  - `DeviceProfilesDaily`: Imagine this job running on a daily basis, by transforming 1-day's `BidLog`s to `DeviceProfile`s and aggregate them. 
