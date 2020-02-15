@@ -1,5 +1,11 @@
 # CS686 Project 2
 
+# Big Notice
+Many of you seem to "begin" working on labs/projects on the day they are due... which I can understand, but certainly not recommend. 
+
+**I dare you try that for project 2.** :-)
+
+
 ### Errata / Corrections
  - (v1) Project 2 is live - around 6:06pm on Friday (Feb 14). Please report errors / ask questions on Piazza (and if you feel like your question can be public, please make it public!). 
  - (v2) **NOTE** Read the "scoring" section at the bottom as it has changed. Minor changes in wording.
