@@ -1,7 +1,7 @@
 # CS686 Project 2
 
 ### Errata / Corrections
- - (v1) Project 2 is live - around 6:06pm on Friday (Feb 14). Please report errors / ask questions on Piazza (and if you feel like your question can be public, please make it public!).
+ - (v1) Project 2 is live - around 6:06pm on Friday (Feb 14). Please report errors / ask questions on Piazza (and if you feel like your question can be public, please make it public!). **NOTE** Read the "scoring" section at the bottom as it has changed.
 
 ## Do's and Don'ts
 
@@ -71,7 +71,8 @@ It's recommended that you view those instructions as JavaDoc (your IDE supports 
 ## Scoring (new rules for projects)
  - Number of sample/shareable/hidden tests (tentative): 15 / 16 / 8 (see https://github.com/cs-rocks/cs686-lectures/blob/master/projects/project2-README.md) **NOTE** Although it's unlikely that I'll change the number of test cases, it is still a possibility, and I'll try my best to keep you all posted in time.
  - If your submission passes ALL of the sample tests (15 of them): your overall score will be: **70% shareable tests + 30% hidden tests** (this weight may vary from project to project).
- - If your submission only passes `x` sample tests out of 15, then your overall score will be: **(x/15)*(x/15)*(70% shareable tests + 30% hidden tests)** Notice that your score is penalized by a factor of ((x/15)*(x/15)). For instance, if x=12, then you're receiving ~64% of the credit.
+ - If your submission only passes `x` sample tests out of 15, then your overall score will be: **`(x/15)*(x/15)*(70% shareable tests + 30% hidden tests)`** Notice that your score is penalized by a factor of `((x/15)*(x/15))`. For instance, if x=12, then you're receiving ~64% of the credit.
+ - The starter code (as-is) would give you 46 points (out of 10,000) with 2/15, 6/16, and 0/8 being the number of tests it passes.
  - Your score for this project will be the maximum score you obtain before the deadline (This applies to all labs/projects).
  - There's no hard limit on how often / how many times you can submit as long as you do not harm anyone else's grading experiences.
  - **With that said, try not to overload the grading system by pushing commits more often than one per 10 minutes (or so).** 
