@@ -1,7 +1,8 @@
 # CS686 Project 2
 
 ### Errata / Corrections
- - (v1) Project 2 is live - around 6:06pm on Friday (Feb 14). Please report errors / ask questions on Piazza (and if you feel like your question can be public, please make it public!). **NOTE** Read the "scoring" section at the bottom as it has changed.
+ - (v1) Project 2 is live - around 6:06pm on Friday (Feb 14). Please report errors / ask questions on Piazza (and if you feel like your question can be public, please make it public!). 
+ - (v2) **NOTE** Read the "scoring" section at the bottom as it has changed. Minor changes in wording.
 
 ## Do's and Don'ts
 
@@ -78,7 +79,7 @@ It's recommended that you view those instructions as JavaDoc (your IDE supports 
  - **With that said, try not to overload the grading system by pushing commits more often than one per 10 minutes (or so).** 
  - **Try not to push to remote repository if your project does not compile locally as it won't be graded anyway.**
 
-## After securing 100% (which all of you will)
+## After securing 100% (which most of you will)
  - Once you secured 100% for this assignment, try to add some tricky unit tests on your own (and feel free to share such test cases on Piazza, even before the deadline).
  - Also, try to `simplify` your code if that's possible; it does not necessarily mean you should do everything in a single line or something like that. Rather, try to cut out unnecessary blocks, logic, etc. to make better code.
 
