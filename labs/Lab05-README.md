@@ -2,6 +2,7 @@
 
 ### Errata / Corrections
  - refer to this file: https://github.com/cs-rocks/cs686-lectures/blob/master/labs/Lab05-README.md
+ - (v1) Released around 9pm on Tuesday, Feb 18.
 
 ## Do's and Don'ts
 
