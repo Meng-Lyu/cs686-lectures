@@ -3,6 +3,7 @@
 ### Errata / Corrections
  - refer to this file: https://github.com/cs-rocks/cs686-lectures/blob/master/labs/Lab05-README.md
  - (v1) Released around 9pm on Tuesday, Feb 18.
+ - (v2) In `LogParser.java` comments, there's a typo: Line 65, `"IPA"` should be `"IAP"` (I guess I was thirsty when I typed that). In `__TestLogParser.java`, in line 35, `SAMPLE1`'s timestamp should be `2020-02-14T02:23:12.983002Z` but I typed `2020-02-14T02:23:72.983002Z` (72 seconds?!). Please fix these two before you start working on your lab (if you accepted the lab after I fixed the typos, then you don't have to fix anything).
 
 ## Do's and Don'ts
 
