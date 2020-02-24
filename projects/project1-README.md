@@ -13,8 +13,9 @@
    - You should utilize `BidLog.recevAt` (timestamp in milliseconds at which the request was received by our servers) when you set `firstAt/lastAt` of `DeviceProfile` and `AppActivity`.
    - You should utilize `BidLog.BidRequest.App.bundle` for `AppActivity`'s bundle (this is a unique ID for each app).
    - You should utilize `BidLog.exchange` for updating the count map in `AppActivity` (key being the enum value of `Exchange` proto).
-   - Lastly, for `countToday` and `countLifetime` in `AppActivity`, consider each `BidLog` being one in-app activity event. Therefore, when we initially convert one `BidLog` to one `DeviceProfile`, then each counter (`countToday`, `countLifetime`, and `countPerExchange`) all must have a value of 1 each (as there is one event being considered). Later, when we aggregate `DeviceProfile` protos for each user, we would naturally sum up the counters to get an accurate value. 
+   - Lastly, for `countToday` in `AppActivity`, consider each `BidLog` being one in-app activity event. Therefore, when we initially convert one `BidLog` to one `DeviceProfile`, then each counter (`countToday` and `countPerExchange`) all must have a value of 1 each (as there is one event being considered). Later, when we aggregate `DeviceProfile` protos for each user, we would naturally sum up the counters to get an accurate value. 
    - If you need further clarification, please ask on Piazza.
+  - (v6) Note: `count_lifetime` field in `AppActivity` proto should be actually removed (and you shouldn't set its value at all). This was mentioned in class, but was not clearly included as a part of the instructions (and previous instruction was misleading), so here it goes: https://piazza.com/class/k5ad4g8m2jf6t6?cid=67 (Bottom-line: just remove the line `int64 count_lifetime = 4;` in your profile.proto.) 
 
 ## Do's and Don'ts
 
