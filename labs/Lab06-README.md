@@ -2,7 +2,8 @@
 
 Up-to-date [README file](https://github.com/cs-rocks/cs686-lectures/blob/master/labs/Lab06-README.md)
 
- - (v0): Draft is uploaded. Assignment to be released on Feb 26th (Wed).
+ - (v0): Lab 06 became available on Canvas around 3:15pm, Feb 25th (Tuesday). 
+ - Please Report any issues/errors on Piazza.
 
 # Java Task #
 **This will not be graded, BUT you must complete this for future labs/projects.**
@@ -20,22 +21,43 @@ Here are some high-level instructions:
 
 
 # BigQuery/SQL Tasks #
+We'll use the public dataset here: `bigquery-public-data.usa_names.usa_1910_2013`
 
-Details TBA.
+[reference file](https://docs.google.com/spreadsheets/d/1OYTBf7ebsGMdjvMcec5rtkgdvv9WwCRSiJpUUNe3IyU/edit#gid=0) for BQ tasks
 
-[reference file](TBA) for BQ tasks
+For each of the following tasks, do it once using `join` and once using `partition by`.
 
-In the meantime, revisit L14 slides, video, and three queries (can be found in this repo) used in lecture.
+Of course, you can try one more time using neither (but that won't be graded).
+
 
 ## Task A ##
-TBA
+Write a SQL query, which produces 104 rows that contain three columns:
+ - `year`: 4-digit year
+ - `name`: The most popular name for newborns during the year (based on the sum of `number`s)
+ - `total_newborns`: The number of newborns given the name.
+ - Your results should be identical to [this](https://docs.google.com/spreadsheets/d/1OYTBf7ebsGMdjvMcec5rtkgdvv9WwCRSiJpUUNe3IyU/edit#gid=0)
+ - **NOTE** As you can see from the shared unit tests, grading system will not care what your column names are or how you order the rows. As such, don't worry about those, but rather make sure they produce the same results. The only thing that matters is the order of your columns. You're expected to figure that out by reading the provided code of unit tests.
 
 ## Task B ##
-TBA
+Write a SQL query, which produces 208 rows that contain four columns:
+ - `year`: 4-digit year
+ - `gender`: either `M` or `F`
+ - `name`: The most popular name for newborns of the gender during the year (based on the sum of `number`s)
+ - `total_newborns`: The number of newborns given the name.
+ - Your results should be identical to [this](https://docs.google.com/spreadsheets/d/1OYTBf7ebsGMdjvMcec5rtkgdvv9WwCRSiJpUUNe3IyU/edit#gid=800936309)
+ - **NOTE** As you can see from the shared unit tests, grading system will not care what your column names are or how you order the rows. As such, don't worry about those, but rather make sure they produce the same results. The only thing that matters is the order of your columns. You're expected to figure that out by reading the provided code of unit tests.
 
 
 ## Task C ##
-TBA
+**This is optional for CS486 students, but required for CS686 & 4+1 students.**
+Write a SQL query, which produces 312 rows that contain four columns:
+ - `year`: 4-digit year
+ - `name`: The **three** most popular name for newborns during the year (based on the sum of `number`s), regardless of gender.
+ - `total_newborns`: The number of newborns given the name.
+ - `ranking`: Either 1, 2, or 3 (indicating most popular, second most popular, or third most popular within that year).
+ - Your results should be identical to [this](https://docs.google.com/spreadsheets/d/1OYTBf7ebsGMdjvMcec5rtkgdvv9WwCRSiJpUUNe3IyU/edit#gid=1761399196)
+  - **NOTE** As you can see from the shared unit tests, grading system will not care what your column names are or how you order the rows. As such, don't worry about those, but rather make sure they produce the same results. The only thing that matters is the order of your columns. You're expected to figure that out by reading the provided code of unit tests.
+
  
 ## How to submit queries ##
  - For each task, there are two blank files under `java/dataflow/resources` directory.
@@ -45,9 +67,10 @@ TBA
  - If you have a query that uses *neither*, feel free to share it publicly on Piazza **after the deadline**.
 
 ## Grading ##
+ - As usual, failing on sample tests will penalize your overall score dramatically!
  - One hidden test is worth 10% and six shareable tests are worth 90%.
  - This **90%** is further divided as follows:
-   - CS 486: Task A is worth 30% and task B is worth 60% (total 90%); task C is worth 10% extra credit.
+   - CS 486: Task A is worth 30% and task B is worth 60% (total 90%).
    - CS 686: Task A is worth 15%, task B 30%, and task C 45% (total 90%).
    - CS 4+1: Task A is worth 15%, task B 30%, and task C 45% (total 90%).
  - This is about "correctness" of your query; if your query violates the conditions stated above, then you will receive 0 points for that subtask.
@@ -57,3 +80,6 @@ TBA
 
 # Status Dashboard #
 https://www.cs.usfca.edu/~hlee84/cs686/lab06-status.html (this will become available once the grading system begins grading.)
+
+
+
