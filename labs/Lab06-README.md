@@ -47,7 +47,7 @@ TBA
 ## Grading ##
  - One hidden test is worth 10% and six shareable tests are worth 90%.
  - This **90%** is further divided as follows:
-   - CS 486: Task A is worth 30% and task B is worth 60% (total 90%).
+   - CS 486: Task A is worth 30% and task B is worth 60% (total 90%); task C is worth 10% extra credit.
    - CS 686: Task A is worth 15%, task B 30%, and task C 45% (total 90%).
    - CS 4+1: Task A is worth 15%, task B 30%, and task C 45% (total 90%).
  - This is about "correctness" of your query; if your query violates the conditions stated above, then you will receive 0 points for that subtask.
