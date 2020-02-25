@@ -2,6 +2,8 @@
 
 Up-to-date [README file](https://github.com/cs-rocks/cs686-lectures/blob/master/labs/Lab06-README.md)
 
+ - (v0): Draft is uploaded. Assignment to be released on Feb 26th (Wed).
+
 # Java Task #
 **This will not be graded, BUT you must complete this for future labs/projects.**
 
@@ -52,3 +54,6 @@ TBA
  - In this lab, all shareable tests are shared in advance for your convenience.
  - Since this lab requires you to run queries on BigQuery (rather than writing Java code), it's expected that you use GCP credits to run your queries until you get the query that produces correct results.
  - The three sample queries (from Lecture 14) can be slightly modified to solve all tasks in this lab (aka, you really should get 100% for this lab).
+
+# Status Dashboard #
+https://www.cs.usfca.edu/~hlee84/cs686/lab06-status.html (this will become available once the grading system begins grading.)
