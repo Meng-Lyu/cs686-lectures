@@ -9,6 +9,51 @@ Many of you seem to "begin" working on labs/projects on the day they are due... 
 ### Errata / Corrections
  - (v1) Project 2 is live - around 6:06pm on Friday (Feb 14). Please report errors / ask questions on Piazza (and if you feel like your question can be public, please make it public!). 
  - (v2) **NOTE** Read the "scoring" section at the bottom as it has changed. Minor changes in wording.
+ - (v3) In **DeviceProfilesLifetime** class, there was a typo for "case 3" condition: 
+```
+(case 3) If both PrevDayPC and TodayPC have a profile each, then merge the two profiles based on the same rule
+  * as what we used for the daily pipeline. In this case, there is one condition to check (for consistency): If
+  * previous day's "last_at" is no later than today's "first_at", then throw CorruptedDataException.
+```
+The statement above contradicts `testMerge03()` in `__TestDeviceProfilesLifetime`. The test is correct, and the statement should be `If previous day's last_at is no earlier than today's first_at` (instead of `no later than`). That is, if previous day's `last_at` is no earlier than today's `first_at`, then the data should be considered corrupted.
+
+Coincidentally, there was one unit test that was missing in the "shareable" suite. Everyone's submission will be re-graded soon after this README file is updated (around 4pm on Feb 25, Tuesday). For your convenience, here's the new unit test:
+
+```
+  @Test
+  public void __shareable__testExceptionHandling06() {
+    try {
+      DeviceId did1 = DeviceId.newBuilder().setOs(OsType.IOS).setUuid(__TestBase.UUID1).build();
+      DeviceId did3 = DeviceId.newBuilder().setOs(OsType.IOS).setUuid(__TestBase.UUID1.toUpperCase()).build();
+
+      GeoActivity.Builder geo1 = GeoActivity.newBuilder().setCountry("usa").setRegion("ca");
+      GeoActivity.Builder geo2 = GeoActivity.newBuilder().setCountry("usa").setRegion("CA");
+
+      AppActivity.Builder app1 =
+          AppActivity.newBuilder().setBundle(__TestBase.Bundle1).putCountPerExchange(Exchange.INMOBI_VALUE, 4);
+      AppActivity.Builder app2 = AppActivity.newBuilder().setBundle(__TestBase.Bundle1.toUpperCase())
+          .putCountPerExchange(Exchange.MOPUB_VALUE, 2);
+
+      PAssert.that(PCollectionList
+          .of(tp.apply(Create.of(DeviceProfile.newBuilder().setDeviceId(did1).setFirstAt(2000L).setLastAt(2000L)
+              .addGeo(geo1).setLatestGeo(geo1).addApp(app1.setFirstAt(2000L).setLastAt(2000L)).build())))
+          .and(tp.apply(Create.of(DeviceProfile.newBuilder().setDeviceId(did3).setFirstAt(1000L).setLastAt(1000L)
+              .addGeo(geo2).setLatestGeo(geo2).addApp(app2.setFirstAt(1000L).setLastAt(1000L)).build())))
+          .apply(new UpdateLifetimeProfile())).satisfies(out -> {
+            fail();
+            return null;
+          });
+
+      tp.run();
+
+      fail();
+    } catch (PipelineExecutionException e) {
+      assertTrue(e.getCause() instanceof CorruptedDataException);
+    }
+  }
+
+```
+
 
 ## Do's and Don'ts
 
