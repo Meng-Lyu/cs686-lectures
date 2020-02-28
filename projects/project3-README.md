@@ -1,7 +1,7 @@
 # CS686 Project 3
 
 ### Errata / Corrections
- - (v0) TBA
+ - (v0) Released on Feb 28th around 1:20am.
  
 ## Do's and Don'ts
 
