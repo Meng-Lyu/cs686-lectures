@@ -3,6 +3,7 @@
 Up-to-date [README file](https://github.com/cs-rocks/cs686-lectures/blob/master/labs/Lab06-README.md)
 
  - (v0): Lab 06 became available on Canvas around 3:15pm, Feb 25th (Tuesday). 
+ - (v1): The wording about not using `Partition BY` was a bit vague, so it's been updated (see the "diff" of the latest commit). Specifically, for the "join" tasks, do NOT use any analytic functions listed [HERE](https://cloud.google.com/bigquery/docs/reference/standard-sql/analytic-function-concepts). For instance, your query for "join" subtask should NOT use `RANK` or `ROW_NUMBER`; you can use those for the `partition` subtask (yet, I don't recommend using `ROW_NUMBER` because it's not efficient).
  - Please Report any issues/errors on Piazza.
 
 # Java Task #
@@ -25,7 +26,7 @@ We'll use the public dataset here: `bigquery-public-data.usa_names.usa_1910_2013
 
 [reference file](https://docs.google.com/spreadsheets/d/1OYTBf7ebsGMdjvMcec5rtkgdvv9WwCRSiJpUUNe3IyU/edit#gid=0) for BQ tasks
 
-For each of the following tasks, do it once using `join` and once using `partition by`.
+For each of the following tasks, do it once using `join` (but no other analytic functions listed [HERE](https://cloud.google.com/bigquery/docs/reference/standard-sql/analytic-function-concepts)) and once using `partition by`.
 
 Of course, you can try one more time using neither (but that won't be graded).
 
@@ -61,7 +62,7 @@ Write a SQL query, which produces 312 rows that contain four columns:
  
 ## How to submit queries ##
  - For each task, there are two blank files under `java/dataflow/resources` directory.
- - If your query uses `join`, copy and paste the query in the file whose name contains `join`.
+ - If your query uses `join`, copy and paste the query in the file whose name contains `join` (again, no analytic functions such as `RANK`, `ROW_NUMBER`, etc.)
  - If your query uses `partition by`, copy and paste the query in the file whose name contains `partition`.
  - **Your query should NOT use both, but only one**. This will be manually checked after the deadline.
  - If you have a query that uses *neither*, feel free to share it publicly on Piazza **after the deadline**.
