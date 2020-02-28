@@ -56,7 +56,7 @@ In `Main.java` file, the three tasks are summarized and which files need to be i
 
 ### Final Remarks
  - **Code Style** I will take a look at 1-2 commits of yours (probably the final commit), and try to leave useful comments. For this first project, don't worry too much about your code style; rather, focus on getting things right (correctness-wise), and then improve your code later.
- - Grading system will begin grading commits starting on Monday (Feb 17) or sooner.
+ - Grading system will begin grading commits on Saturday or Sunday (Feb 29 or Mar 1).
  - When it begins grading, the status dashboard will become available and it will show how many unit tests (of each type) you passed.
 
 ## Commits & Testing
