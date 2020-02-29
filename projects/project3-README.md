@@ -2,6 +2,31 @@
 
 ### Errata / Corrections
  - (v0) Released on Feb 28th around 1:20am.
+ - (v1) For `os` field in the http URL, it's actually not given but you should infer it from `ios_idfa` or `gps_adid` (see the changes below). I updated the starter code around 8:40pm on Feb 28th, but if you accepted the assignment before that, then you should read the following for the changed wording: (right before `getIdAndPurchaseEvent` in `LogParser.java`)
+ ```
+   /**
+   * Parsing rules (of the log messages) are mostly the same as in Lab 05.
+   *
+   * Here are some "new" rules/differences:
+   *
+   * (1) Now you should return KV &lt; DeviceId, PurchaseEvent &gt; (not just PurchaseEvent proto) where DeviceId should
+   * be parsed based on the query URL (this is the new thing you need to incorporate).
+   *
+   * "uuid" will be given as either "ios_idfa" parameter (for iOS) or "gps_adid" (for android). If both parameters are
+   * non-empty or both are empty, then consider the input log invalid. Also, note that these two fields are
+   * case-insensitive, and thus you should normalize them here.
+   *
+   * (2) When input log is invalid, return null (instead of throwing an exception).
+   *
+   * ------------------------------------------------------------------------------
+   *
+   * You can copy your LogParser class from Lab05, and make necessary changes.
+   *
+   * OR, you can use the instructor's sample LogParser class (from reference solutions), and make necessary changes.
+   *
+   * Either way is acceptable, but you still need to ensure that your code passes all unit tests of this project.
+   */
+```
  
 ## Do's and Don'ts
 
