@@ -3,6 +3,12 @@
 Up-to-date [README file](https://github.com/cs-rocks/cs686-lectures/blob/master/labs/Lab07-README.md)
 
  - (v0): Released around 9pm on Mar 3 (Tue).
+ - (v1): Added a clarification for Task 1-B (around 5pm on Mar 4 Wed):
+ 
+> **Clarification (1-B)**: In case For Task 1-B, you should NOT ignore purchases with `amount=0`, unlike in Task 3. 
+> Also, as you *filter out* the rows with average amount less than 10,000, you will *keep* the rows with average amount `>= 10,000` (otherwise, you'll end up with 7 rows instead of 5).
+> Please feel free to ask on Piazza if you find problem statements ambiguous!
+
 
 # Task Context and Initial Setup #
 
@@ -147,7 +153,7 @@ Lastly, filter out any rows (bundles) whose per-person average amount is less th
 Your query should produce 5 rows (see the reference table later).
 
 (Note that Your query for 1-B is likely to be very similar to that for 1-A.)
- 
+
 
 ## Task 2 - High Spenders ##
 
