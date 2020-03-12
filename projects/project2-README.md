@@ -9,6 +9,51 @@ Many of you seem to "begin" working on labs/projects on the day they are due... 
 ### Errata / Corrections
  - (v1) Project 2 is live - around 6:06pm on Friday (Feb 14). Please report errors / ask questions on Piazza (and if you feel like your question can be public, please make it public!). 
  - (v2) **NOTE** Read the "scoring" section at the bottom as it has changed. Minor changes in wording.
+ - (v3) In **DeviceProfilesLifetime** class, there was a typo for "case 3" condition: 
+```
+(case 3) If both PrevDayPC and TodayPC have a profile each, then merge the two profiles based on the same rule
+  * as what we used for the daily pipeline. In this case, there is one condition to check (for consistency): If
+  * previous day's "last_at" is no later than today's "first_at", then throw CorruptedDataException.
+```
+The statement above contradicts `testMerge03()` in `__TestDeviceProfilesLifetime`. The test is correct, and the statement should be `If previous day's last_at is no earlier than today's first_at` (instead of `no later than`). That is, if previous day's `last_at` is no earlier than today's `first_at`, then the data should be considered corrupted.
+
+Coincidentally, there was one unit test that was missing in the "shareable" suite. Everyone's submission will be re-graded soon after this README file is updated (around 4pm on Feb 25, Tuesday). For your convenience, here's the new unit test:
+
+```
+  @Test
+  public void __shareable__testExceptionHandling06() {
+    try {
+      DeviceId did1 = DeviceId.newBuilder().setOs(OsType.IOS).setUuid(__TestBase.UUID1).build();
+      DeviceId did3 = DeviceId.newBuilder().setOs(OsType.IOS).setUuid(__TestBase.UUID1.toUpperCase()).build();
+
+      GeoActivity.Builder geo1 = GeoActivity.newBuilder().setCountry("usa").setRegion("ca");
+      GeoActivity.Builder geo2 = GeoActivity.newBuilder().setCountry("usa").setRegion("CA");
+
+      AppActivity.Builder app1 =
+          AppActivity.newBuilder().setBundle(__TestBase.Bundle1).putCountPerExchange(Exchange.INMOBI_VALUE, 4);
+      AppActivity.Builder app2 = AppActivity.newBuilder().setBundle(__TestBase.Bundle1.toUpperCase())
+          .putCountPerExchange(Exchange.MOPUB_VALUE, 2);
+
+      PAssert.that(PCollectionList
+          .of(tp.apply(Create.of(DeviceProfile.newBuilder().setDeviceId(did1).setFirstAt(2000L).setLastAt(2000L)
+              .addGeo(geo1).setLatestGeo(geo1).addApp(app1.setFirstAt(2000L).setLastAt(2000L)).build())))
+          .and(tp.apply(Create.of(DeviceProfile.newBuilder().setDeviceId(did3).setFirstAt(1000L).setLastAt(1000L)
+              .addGeo(geo2).setLatestGeo(geo2).addApp(app2.setFirstAt(1000L).setLastAt(1000L)).build())))
+          .apply(new UpdateLifetimeProfile())).satisfies(out -> {
+            fail();
+            return null;
+          });
+
+      tp.run();
+
+      fail();
+    } catch (PipelineExecutionException e) {
+      assertTrue(e.getCause() instanceof CorruptedDataException);
+    }
+  }
+
+```
+
 
 ## Do's and Don'ts
 
@@ -76,10 +121,10 @@ It's recommended that you view those instructions as JavaDoc (your IDE supports 
 
 
 ## Scoring (new rules for projects)
- - Number of sample/shareable/hidden tests (tentative): 15 / 16 / 8 (see https://github.com/cs-rocks/cs686-lectures/blob/master/projects/project2-README.md) **NOTE** Although it's unlikely that I'll change the number of test cases, it is still a possibility, and I'll try my best to keep you all posted in time.
+ - Number of sample/shareable/hidden tests (tentative): 15 / 17 / 8 (see https://github.com/cs-rocks/cs686-lectures/blob/master/projects/project2-README.md) **NOTE** Although it's unlikely that I'll change the number of test cases, it is still a possibility, and I'll try my best to keep you all posted in time. --> Guess what, one more shareable test.
  - If your submission passes ALL of the sample tests (15 of them): your overall score will be: **70% shareable tests + 30% hidden tests** (this weight may vary from project to project).
  - If your submission only passes `x` sample tests out of 15, then your overall score will be: **`(x/15)*(x/15)*(70% shareable tests + 30% hidden tests)`** Notice that your score is penalized by a factor of `((x/15)*(x/15))`. For instance, if x=12, then you're receiving ~64% of the credit.
- - The starter code (as-is) would give you 46 points (out of 10,000) with 2/15, 6/16, and 0/8 being the number of tests it passes.
+ - The starter code (as-is) would give you 43 points (out of 10,000) with 2/15, 6/17, and 0/8 being the number of tests it passes. (before the new shareable test was added, the default score was 46 points.)
  - Your score for this project will be the maximum score you obtain before the deadline (This applies to all labs/projects).
  - There's no hard limit on how often / how many times you can submit as long as you do not harm anyone else's grading experiences.
  - **With that said, try not to overload the grading system by pushing commits more often than one per 10 minutes (or so).** 
