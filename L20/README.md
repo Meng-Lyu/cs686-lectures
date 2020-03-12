@@ -2,6 +2,11 @@
 Follow the instructions here: 
 https://docs.google.com/document/d/1quiFqYds7nKgW-W5voLpbH07fK5bmZNG6BjQDMIOmhU/edit
 
+# About this guide #
+- In L20 (if it had not been cancelled), I would have demonstrated how to do this.
+- Instead, you will need to follow the step-by-step instructions (see the Goolge Docs link above).
+- If you do not complete these, your future labs & projects (namely, Projects 04-06 and Labs 09-12) may not be graded.
+
 # Task A #
 Follow the Google Docs.
 
