@@ -31,6 +31,9 @@ import org.junit.Test;
 import com.google.common.base.Objects;
 import com.google.common.collect.Iterables;
 
+/**
+ * The contents of this file will be covered in Lecture 21.
+ */
 public class TestWindows {
 
   @Rule
