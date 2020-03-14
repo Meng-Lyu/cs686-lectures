@@ -331,8 +331,8 @@ public class TestWindows {
     final long secondToMillis = 1000L;
     final long baseTimestamp = 0L;
 
-    // TODO: To change the "eventAt" arguments below to make sure the output (of test_homework()) agrees with the
-    // comments (all of them at the same time, for Step4, Step5, and Step6).
+    // TODO: To change the "eventAt" arguments below to make the console output (of test_homework()) to agree with the
+    // comments (for Steps 4-7 at the same time).
     // There are many correct answers, and feel free to share yours on Piazza.
     // It's sufficient to replace "1* 2* 3* 4* 5*" by some numbers you choose.
     return Arrays.asList(//
@@ -401,6 +401,21 @@ public class TestWindows {
       // [Step6] key B count 2 [window timestamp 69999]
       // [Step6] key B count 1 [window timestamp 84999]
       windowedKeys.apply(new KvPrinter("Step6"));
+    }
+
+    // Step 7: Sessions with a gap of 10 seconds.
+    {
+      PCollection<KV<String, Long>> windowedKeys = dataWithTs
+          .apply(Window.into(Sessions.withGapDuration(Duration.standardSeconds(10)))).apply(WithKeys
+              .of((SerializableFunction<MyData, String>) input -> input.key).withKeyType(TypeDescriptors.strings()))
+          .apply(Count.perKey());
+
+      // Expect to see (order may differ):
+      // [Step7] key A count 1 [window timestamp 29999]
+      // [Step7] key A count 2 [window timestamp 44999]
+      // [Step7] key B count 1 [window timestamp 49999]
+      // [Step7] key B count 1 [window timestamp 64999]
+      windowedKeys.apply(new KvPrinter("Step7"));
     }
 
     tp.run();
