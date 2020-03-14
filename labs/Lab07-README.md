@@ -9,6 +9,15 @@ Up-to-date [README file](https://github.com/cs-rocks/cs686-lectures/blob/master/
 > Also, as you *filter out* the rows with average amount less than 10,000, you will *keep* the rows with average amount `>= 10,000` (otherwise, you'll end up with 7 rows instead of 5).
 > Please feel free to ask on Piazza if you find problem statements ambiguous!
 
+ - (v2): (Mar 13 at 11:44am) See Piazza post [183](https://piazza.com/class/k5ad4g8m2jf6t6?cid=183) about case-sensitivity in `__shareable__2A()`. If your code was not passing "2A" test because your query returns os/uuid with mixed-case or upper-case, then it shall pass now. The grading system will now `lower` your results before comparing with the correct results. For local tests, you can fix the lines 120-122 of `__TestSample.Java` as follows:
+
+> ```Java
+> // For Task 2-A, grading system will round the values to 1 decimal place.
+>  static __helperInterface formatter2A =
+>      (FieldValueList fvl) -> String.format("%s\t%s\t%d\t%.1f", fvl.get(0).getStringValue().toLowerCase(),
+>          fvl.get(1).getStringValue().toLowerCase(), fvl.get(2).getLongValue(), fvl.get(3).getDoubleValue());
+> ```
+
 
 # Task Context and Initial Setup #
 
