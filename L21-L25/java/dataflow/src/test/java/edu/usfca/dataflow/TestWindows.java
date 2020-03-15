@@ -420,4 +420,23 @@ public class TestWindows {
 
     tp.run();
   }
+
+  @Test
+  public void test_quizL21() {
+    tp.apply(Create.of("abc", "def")).apply(new StrPrinter());
+    tp.run();
+  }
+
+  static class StrPrinter extends PTransform<PCollection<String>, PDone> {
+    @Override
+    public PDone expand(PCollection<String> input) {
+      input.apply(ParDo.of(new DoFn<String, Void>() {
+        @ProcessElement
+        public void process(ProcessContext c) {
+          System.out.format("key %s [window timestamp %d]\n", c.element(), c.timestamp().getMillis());
+        }
+      }));
+      return PDone.in(input.getPipeline());
+    }
+  }
 }
