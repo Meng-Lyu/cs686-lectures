@@ -1,7 +1,7 @@
 
 ### Errata / Corrections
  - refer to this file: https://github.com/cs-rocks/cs686-lectures/blob/master/labs/Lab08-README.md
- - (v0) To be released on Mar 17 (Tuesday) evening.
+ - (v0) To be released on Mar 17 (Tuesday) evening. Note that this lab will be much easier if you first complete the ungraded quiz/homework in L22 and L23, respectively.
 
 ## Do's and Don'ts
 
@@ -19,6 +19,9 @@
 
 
 ## Assignment Details
+
+This lab focuses on Windowing in Beam SDK through hands-on exercises (it's more of "problem solving" than coding, because it's about understanding the concepts and definitions).
+
 
 ### Main Tasks
 
