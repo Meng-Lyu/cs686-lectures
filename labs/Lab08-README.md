@@ -52,7 +52,7 @@ This lab focuses on Windowing in Beam SDK through hands-on exercises (it's more 
 
 ## Commits & Testing
  - **Make incremental changes and commit your changes often**.
- - Grading system status: `https://www.cs.usfca.edu/~hlee84/cs686/lab08-status.html` (if the page is blank or not accessible, it means the grading system has not started grading yet.)
+ - Grading system status: `https://www.cs.usfca.edu/~hlee84/cs686/lab08-status.html` (if the page is blank or not accessible, it means the grading system has not started grading yet; grading usually begins within a day after the assignment is released.)
  - URL for accessing your reports: You'll be able to download the zip files from the status dashboard above (it requires you login using Dons email account). Only you and the teaching staff can see your reports.
  - If your project does not build (due to compilation errors), then it cannot be graded; don't even push to remote repo. It is your responsibility to run unit tests locally to make sure that all of the provided tests (sample tests) pass.
  - If your commit is stuck at `pending` status for a while, then it probably means something went wrong and it crashed or never terminated. If such is the case, make another push to see if the issue persists. If so, email the instructor (include your repo and sha).
@@ -65,8 +65,7 @@ This lab focuses on Windowing in Beam SDK through hands-on exercises (it's more 
 
 ## Scoring (read carefully)
  - Number of sample/shareable/hidden tests: 7 / 3 / 1
- - If your submission fails any one of the sample tests: Your score will be 0 (This applies to all labs/projects).
- - Otherwise, your overall score will be **90% shareable tests + 10% hidden tests** (this weight may vary from lab to lab).
+ - Your overall score will be **90% shareable tests + 10% hidden tests** (this weight may vary from lab to lab), penalized by the number of failed sample tests.
  - Your score for this lab will be the maximum score you obtain before the deadline (This applies to all labs/projects).
  - There's no hard limit on how often / how many times you can submit as long as you do not harm anyone else's grading experiences. 
  - **With that said, try not to overload the grading system by pushing commits more often than one per 10 minutes (or so).** 
