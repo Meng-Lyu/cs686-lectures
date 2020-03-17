@@ -1,7 +1,9 @@
 
 ### Errata / Corrections
  - refer to this file: https://github.com/cs-rocks/cs686-lectures/blob/master/labs/Lab08-README.md
- - (v0) To be released on Mar 17 (Tuesday) evening. Note that this lab will be much easier if you first complete the ungraded quiz/homework in L22 and L23, respectively.
+ - (v0) To be released on Mar 17 (Tuesday) afternoon. 
+ 
+## Note that this lab will be much easier if you first complete the ungraded quiz/homework in L22 and L23, respectively.
 
 ## Do's and Don'ts
 
