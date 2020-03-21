@@ -3,6 +3,7 @@
 ### Errata / Corrections
  - (v0) Released on Mar 20 (Fri) around 5pm.
  - (v1) Mar 21 (Sat) aroudn 9:18am: Added "Sample" unit tests (24 -> 33). For those who accepted the Github assignment, I will email you so you can obtain the new files ([see here](https://github.com/cs-rocks/cs686-lectures/tree/master/projects/project4-data)). All submissions will be regraded shortly. 
+ - (v2) Mar 21 (Sat) around 4:25pm: Clarified "Hint" right before `Task C` below (but that'll only be useful when you're nearly done with the project). 
 
 
 ## BEFORE YOU BEGIN
@@ -61,6 +62,7 @@
  - For instance, you should have fields that store the number of purchases and the total amount of purchases.
  - Note that you will actually **merge** `PurchaserProfile` protos per user, so `MyProto` should be able to represent aggregated values (such as sums or counts); this may help you come up with what you need.
  - With this approach, you should be able to pass most of the tests in `__TestWith05ByteSize` (probably except for the tests ending in `75`). 
+ - Also, you may be so close to passing all `PostMerge` tests as well (check the console output when you run unit tests). See my answer in this [Piazza post](https://piazza.com/class/k5ad4g8m2jf6t6?cid=223) for hints.
  - To pass all tests, you need to apply one more optimization technique that we discussed in class. (If you're so close to `75%` but just a little bit over the threshold, then wait for L26-L28. Or, try to find a way to represent `map<A,B>` in a more concise manner. I'll discuss this in one of those lectures.)
 
 </p>
