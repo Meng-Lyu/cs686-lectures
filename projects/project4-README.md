@@ -2,6 +2,7 @@
 
 ### Errata / Corrections
  - (v0) Released on Mar 20 (Fri) around 5pm.
+ - (v1) Mar 21 (Sat) aroudn 9:18am: Added "Sample" unit tests (24 -> 33). For those who accepted the Github assignment, I am going to manually push the changes to your remote remo. All submissions will be regraded shortly. 
 
 
 ## BEFORE YOU BEGIN
@@ -120,10 +121,10 @@
 
 
 ## Scoring (new rules for projects)
- - Number of sample/shareable/hidden tests (tentative): 24 / 33 / 8
+ - Number of sample/shareable/hidden tests (tentative): 33 / 33 / 8
  - **NOTE** Although it's unlikely that I'll change the number of test cases, it is still a possibility, and I'll try my best to keep you all posted in timely manner.
- - If your submission passes ALL of the sample tests (24 of them): your overall score will be: **66% shareable tests + 24% hidden tests**. (The extra 10% comes from Task C.)
- - If your submission only passes `x` sample tests out of 24, then your overall score will be: **`(x/24)*(x/24)*(66% shareable tests + 24% hidden tests)`** Notice that your score is penalized by a factor of `((x/24)*(x/24))`.
+ - If your submission passes ALL of the sample tests (33 of them): your overall score will be: **66% shareable tests + 24% hidden tests**. (The extra 10% comes from Task C.)
+ - If your submission only passes `x` sample tests out of 33, then your overall score will be: **`(x/33)*(x/33)*(66% shareable tests + 24% hidden tests)`** Notice that your score is penalized by a factor of `((x/33)*(x/33))`.
  - Your score for this project will be the maximum score you obtain before the deadline (This applies to all labs/projects).
  - There's no hard limit on how often / how many times you can submit as long as you do not harm anyone else's grading experiences.
  - **With that said, try not to overload the grading system by pushing commits more often than one per 10 minutes (or so).** 
