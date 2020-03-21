@@ -2,7 +2,7 @@
 
 ### Errata / Corrections
  - (v0) Released on Mar 20 (Fri) around 5pm.
- - (v1) Mar 21 (Sat) aroudn 9:18am: Added "Sample" unit tests (24 -> 33). For those who accepted the Github assignment, I am going to manually push the changes to your remote remo. All submissions will be regraded shortly. 
+ - (v1) Mar 21 (Sat) aroudn 9:18am: Added "Sample" unit tests (24 -> 33). For those who accepted the Github assignment, I will email you so you can obtain the new files ([see here](https://github.com/cs-rocks/cs686-lectures/tree/master/projects/project4-data)). All submissions will be regraded shortly. 
 
 
 ## BEFORE YOU BEGIN
