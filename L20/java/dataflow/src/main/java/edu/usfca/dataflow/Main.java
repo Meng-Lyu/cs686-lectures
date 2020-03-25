@@ -38,7 +38,7 @@ public class Main {
     // This will display the "current settings" stored in options.
     System.out.println(options.toString());
 
-    options.setTempLocation(GCS_BUCKET);
+    options.setTempLocation(GCS_BUCKET + "/staging"); // "/staging" was added on Mar 15 around 3pm. Without it, you may see an error on the console.
     options.setJobName(String.format("my-dataflow-job-%s", GIT_ID));
     options.setRunner(DataflowRunner.class);
     options.setMaxNumWorkers(1);
