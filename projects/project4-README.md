@@ -4,6 +4,7 @@
  - (v0) Released on Mar 20 (Fri) around 5pm.
  - (v1) Mar 21 (Sat) aroudn 9:18am: Added "Sample" unit tests (24 -> 33). For those who accepted the Github assignment, I will email you so you can obtain the new files ([see here](https://github.com/cs-rocks/cs686-lectures/tree/master/projects/project4-data)). All submissions will be regraded shortly. 
  - (v2) Mar 21 (Sat) around 4:25pm: Clarified "Hint" right before `Task C` below (but that'll only be useful when you're nearly done with the project). 
+ - (v3) Mar 31 (Tue) around 1:38pm: You do not have to submit your Dataflow Job IDs. I can fetch all Dataflow jobs & metrics, so I'll grade them and let you know the results via email. Note that this only applies to those who finish both Tasks A and B (9000/10000). If you pass all tests and run your job on GCP, you're very likely to receive a full credit for Task C as well (I will simply run some sanity-checks).
 
 
 ## BEFORE YOU BEGIN
@@ -77,10 +78,10 @@
  - Copy `Main.java` from your Project 4 repo to your Project 3 repo, and change `OUTPUT_SPENDER_FILE` and `OUTPUT_ADDICT_FILE` to `project3` accordingly.
  - Run it (run `main()` method from your IDE or do `gradle run` from command-line under `java/dataflow`) once in your `cs686-proj3-xxx` repo and once in your `cs686-proj4-xxx` repo.
  - Check the Dataflow Web Console page, and compare the two jobs. Your job from project 3 may fail (that's OK and that's expected). Your job from project 4 should run smoothly. 
- - Once you are done, you'll later submit these two Dataflow jobs' Job IDs, and instructions will be provided later, separately.
- - This task is worth 10% of this project's grade (`1000/10000`); if your pipeline runs on GCP and produces the correct results, then you will get that 10%. This will be graded semi-manually.
+ - Once you are done running it, simply check the results (outputs) from `cs686-s06` and `cs686-09` steps. The former should produce six elements (Addicts) and the latter 1738 elements (High Spenders). You can check these from the Dataflow Web Console page (and this is one of the things I check when I grade your Dataflow jobs ).
+ - This task is worth 10% of this project's grade (`1000/10000`); if your pipeline runs on GCP and produces the correct results, then you will get that 10%. This will be graded semi-manually (only after you secure 9000 points of 10000).
  - How to obtain the input data: If you have granted "owner access" to me successufully (according to L20), then you should expect to see data files in your GCS bucket(s) some time after March 20th. If you have not done that yet, there will be a delay until you get the data (recall that you are supposed to complete the setup by Mar 20 per the instructions from L20). If you do not see the data files, ask the teaching staff on Piazza. 
- - How will this be graded: You will be given a link to Google Forms to submit two Dataflow Job IDs (one for project 3 and one for project 4). The teaching staff will manually grade by examining the job logs & outputs.
+ - How will this be graded: You do not have to do anything after you run Dataflow jobs. Within a day or two, those jobs will be graded by instructor, and you'll receive an email.
 
 
 **IDE stuff**
