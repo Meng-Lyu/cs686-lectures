@@ -154,7 +154,7 @@ public class L31Storage {
    * 
    * -rw-r--r-- 1 haden staff 6753 Mar 24 22:45 tfrecord-00000-of-00001.bin.gz
    */
-  public static void execute(String[] args) throws InvalidProtocolBufferException {
+  public static void executeSampleCode() throws InvalidProtocolBufferException {
     List<byte[]> data = new ArrayList<>();
 
     for (int i = 0; i < 10; i++) {
