@@ -183,8 +183,6 @@ public class L31Storage {
 
     p.run().waitUntilFinish();
   }
-<<<<<<< HEAD
-=======
 
   public static void execute(String[] args) throws InvalidProtocolBufferException {
     executeSampleCode();
@@ -202,5 +200,4 @@ public class L31Storage {
     // try to make your code look nice and clean afterwards. Feel free to share your code (use Github's gist, maybe).
 
   }
->>>>>>> 900fee5... fix
 }

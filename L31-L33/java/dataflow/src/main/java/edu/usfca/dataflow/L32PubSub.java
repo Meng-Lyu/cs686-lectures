@@ -88,8 +88,6 @@ public class L32PubSub {
       case 3:
         // Pipeline #3.
         GlobalWindowAndGbkWithDiscardingPanes(unboundedPc).run();
-<<<<<<< HEAD
-=======
         break;
 
       case 4:
@@ -128,7 +126,6 @@ public class L32PubSub {
         // Make sure you run your job on local machine first (to not waste GCP credits), and then run it on GCP.
         break;
 
->>>>>>> 900fee5... fix
       default:
         break;
     }
