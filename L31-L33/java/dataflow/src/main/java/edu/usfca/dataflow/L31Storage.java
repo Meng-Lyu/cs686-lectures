@@ -183,4 +183,21 @@ public class L31Storage {
 
     p.run().waitUntilFinish();
   }
+
+  public static void execute(String[] args) throws InvalidProtocolBufferException {
+    executeSampleCode();
+
+    // TODO: Ungraded homework -- after running this code once (which would generate four files),
+    // write a pipeline that reads from the four files, extracts os and ifa (use them as the "key"),
+    // and count per key. Obviously, you should get "4" for each key.
+    // Then, write the results (key and count) to a single text file, using TextIO so you can verify.
+
+    // You can exercise three things with this ungraded homework:
+    // (1) Reading data from four different formats (b64/tf x gzipped/not).
+    // (2) when extracting os and ifa, try defining a new proto message to apply "partial deserialization" (recall L29).
+    // (3) Writing a pipeline from scratch (so far, you've been focusing on implementing PTrasnforms & DoFns, but how
+    // about writing an entire pipeline from scratch?). Try to mimic "executeSampleCode" for the starters, and then
+    // try to make your code look nice and clean afterwards. Feel free to share your code (use Github's gist, maybe).
+
+  }
 }

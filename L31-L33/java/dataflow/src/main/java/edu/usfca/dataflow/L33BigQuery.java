@@ -114,12 +114,13 @@ public class L33BigQuery {
     // Write to BigQuery
     List<TableFieldSchema> fields = new ArrayList<>();
     fields.add(new TableFieldSchema().setName("name").setType("STRING"));
-    fields.add(new TableFieldSchema().setName("total").setType("INTEGER"));
-    fields.add(new TableFieldSchema().setName("year").setType("INTEGER"));
-    // PCollection<MyData> data = ...
+    // TODO Uncomment and complete the implementation!
+    // fields.add(new TableFieldSchema().setName("total")....);
+    // fields.add(new TableFieldSchema().setName("year")....);
+
     data.apply(BigQueryIO.<MyData>write().to(destTable)//
-        .withWriteDisposition(WriteDisposition.WRITE_TRUNCATE)//
-        .withCreateDisposition(CreateDisposition.CREATE_IF_NEEDED) //
+        .withWriteDisposition(WriteDisposition.WRITE_TRUNCATE)// <- TODO what other options are available?
+        .withCreateDisposition(CreateDisposition.CREATE_IF_NEEDED) // <- TODO what other options are available?
         .withSchema(new TableSchema().setFields(fields))//
         .withFormatFunction((SerializableFunction<MyData, TableRow>) input//
     -> new TableRow().set("name", input.name).set("year", input.year)//
