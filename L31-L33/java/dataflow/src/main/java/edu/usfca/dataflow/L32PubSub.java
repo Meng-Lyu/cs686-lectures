@@ -88,6 +88,47 @@ public class L32PubSub {
       case 3:
         // Pipeline #3.
         GlobalWindowAndGbkWithDiscardingPanes(unboundedPc).run();
+<<<<<<< HEAD
+=======
+        break;
+
+      case 4:
+        // TODO: Ungraded homework (1)
+        //
+        // After trying the three pipelines above, and after checking the console output of
+        // Dataflow jobs on GCP (on your web browser), let's try to do something crazy.
+        //
+        // 1. Write a program/script (python, bash, etc.) that "publishes" 1k messages really quickly, to the
+        // topic you created. I suggest your program publishes a message randomly chosen from something like {"abc",
+        // "xyz", "cs686"} (hence, a small set of candidates). That way, you will observe just a couple of keys in the
+        // logs. This can be easily done using command-line Google Cloud SDK (since you've already set up your
+        // credentials in L20). See: https://cloud.google.com/sdk/gcloud/reference/pubsub/topics/publish
+        //
+        // 2. When your script is ready, run your Dataflow pipeline #2 on GCP, publish a message or two to ensure your
+        // pipeline is pulling/receiving those messages, and then execute your script/program a couple of times (so, a
+        // lot of messages within a short period of time!). Observe what the console messages look like (for your
+        // Dataflow job).
+        //
+        // 3. Repeat this with Dataflow pipeline #3 on GCP. What differences do you see?
+        //
+        // 4. What do you think would happen to your pipelines if your program were to publish 10M-100M messages very
+        // quickly (instead of 1k)? (Don't do that because because PubSub is quite expensive, and you don't want to
+        // waste GCP credits... as you'll need some for project 5.)
+        // Share your results from steps 2-3 (also, feel free to share your script from step 1, using gist from Github).
+        //
+        // TODO: Ungraded homework (2)
+        // You can publish messages with attributes (key-value pairs containing "extra data").
+        // See, again, https://cloud.google.com/sdk/gcloud/reference/pubsub/topics/publish
+        // 5. Implement a pipeline that ignores the "data" in the pubsub messages, but simply produce KV<String,String>
+        // where they correspond to the key-values of attributes of messages. Then, group by keys, and concatenation all
+        // values (after sorting by their timestamp).
+        // This requires you read documentations about PubSubIO (of Beam SDK), among other things, yet it'll be an
+        // interesting exercise to implement this.
+        //
+        // Make sure you run your job on local machine first (to not waste GCP credits), and then run it on GCP.
+        break;
+
+>>>>>>> 900fee5... fix
       default:
         break;
     }
