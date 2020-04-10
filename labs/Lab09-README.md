@@ -4,8 +4,9 @@
  - (v1) Updated on Apr 10 aroudn 10:17am:
  In the main method, you should change the GCS destination to point to your own bucket, not mine, as you do not have access to my bucket...
 ```
-     p.apply(TextIO.read().from(GCS_BUCKET + "/project4-perf/data00.txt")).apply(ParDo.of(new GsonParser6()))
-        .apply(TextIO.write().to("gs://usf-cs686-sp20/lab09-output/test")); // <- change this to GCS_BUCKET + "/lab09-output/test".
+ p.apply(TextIO.read().from(GCS_BUCKET + "/project4-perf/data00.txt")).apply(ParDo.of(new GsonParser6()))
+  .apply(TextIO.write().to("gs://usf-cs686-sp20/lab09-output/test")); // <- change this to 
+                                                                      // GCS_BUCKET + "/lab09-output/test".
 ```
 
 
