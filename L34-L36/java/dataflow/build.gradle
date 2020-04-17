@@ -43,6 +43,7 @@ dependencies {
     compile 'com.google.guava:guava:28.1-jre'
     compile group: 'com.google.cloud', name: 'google-cloud-bigquery', version: "${gcVersion}"
     compile group: 'com.google.cloud', name: 'google-cloud-storage', version: "${gcVersion}"
+    compile group: 'com.google.cloud.bigtable', name: 'bigtable-hbase-beam', version: '1.11.0'
 
     // annotation
     compile group: 'org.slf4j', name: 'slf4j-api', version: "${slf4jVersion}"
